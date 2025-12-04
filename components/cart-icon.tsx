@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { ShoppingCart } from "lucide-react"
-import { useCart } from "@/contexts/cart-context"
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/cart-context";
 
 export function CartIcon() {
-  const { totalItems, openCart } = useCart()
+  const { totalItems, openCart } = useCart();
 
   return (
     <button
       onClick={openCart}
-      className="relative p-2 rounded-full bg-dark-400 hover:bg-dark-300 transition-colors duration-200"
+      className="relative p-2 rounded-full bg-dark-400 hover:bg-dark-300 transition-colors duration-200 hidden"
       aria-label="Open shopping cart"
     >
       <ShoppingCart className="w-6 h-6 text-gray-100" />
@@ -19,5 +19,5 @@ export function CartIcon() {
         </span>
       )}
     </button>
-  )
+  );
 }

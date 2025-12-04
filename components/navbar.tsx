@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ShoppingCart, Menu, X, ArrowRight } from "lucide-react"
-import { useCart } from "@/contexts/cart-context"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Link from "next/link";
+import { ShoppingCart, Menu, X, ArrowRight } from "lucide-react";
+import { useCart } from "@/contexts/cart-context";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { openCart, itemCount } = useCart()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { totalItems, openCart } = useCart();
 
   const menuLinks = [
     { href: "#about-section", label: "ABOUT US" },
@@ -17,16 +18,18 @@ export function Navbar() {
     { href: "#", label: "PRICING" },
     { href: "#", label: "E-BOOK", badge: "NEW" },
     { href: "#", label: "CONTACT US" },
-  ]
+  ];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center w-full justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <span className="text-white text-xl md:text-2xl font-bold tracking-tight">VLOM.UST</span>
+              <span className="text-white text-xl md:text-2xl font-bold tracking-tight">
+                VLOM.UST
+              </span>
               <div className="w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-white flex items-center justify-center group-hover:bg-white transition-colors">
                 <div className="w-1.5 h-1.5 bg-white rounded-full group-hover:bg-black" />
               </div>
@@ -42,10 +45,10 @@ export function Navbar() {
                 className="relative text-white hover:text-zinc-400 transition-colors"
                 aria-label="Shopping cart"
               >
-                <ShoppingCart className="w-5 h-5 md:w-6 md:h-6" />
-                {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-white text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    {itemCount}
+                <ShoppingCart className="w-6 h-6 text-gray-100" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {totalItems > 9 ? "9+" : totalItems}
                   </span>
                 )}
               </button>
@@ -63,8 +66,14 @@ export function Navbar() {
                 className="text-white hover:text-zinc-400 transition-colors flex items-center gap-2"
                 aria-label="Toggle menu"
               >
-                <span className="hidden md:inline text-sm uppercase tracking-wider">Menu</span>
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                <span className="hidden md:inline text-sm uppercase tracking-wider">
+                  Menu
+                </span>
+                {isMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
               </button>
             </div>
           </div>
@@ -80,8 +89,14 @@ export function Navbar() {
         <div className="absolute top-0 left-0 right-0 border-b border-zinc-800">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16 md:h-20">
-              <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                <span className="text-white text-xl md:text-2xl font-bold tracking-tight">VLOM.UST</span>
+              <Link
+                href="/"
+                className="flex items-center gap-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="text-white text-xl md:text-2xl font-bold tracking-tight">
+                  VLOM.UST
+                </span>
                 <div className="w-6 h-6 md:w-7 md:h-7 rounded-full border-2 border-white flex items-center justify-center">
                   <div className="w-1.5 h-1.5 bg-white rounded-full" />
                 </div>
@@ -91,7 +106,9 @@ export function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-zinc-400 transition-colors flex items-center gap-2 md:gap-3"
               >
-                <span className="text-xs md:text-sm uppercase tracking-wider">Close</span>
+                <span className="text-xs md:text-sm uppercase tracking-wider">
+                  Close
+                </span>
                 <X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
             </div>
@@ -129,14 +146,16 @@ export function Navbar() {
                 <div className="w-full">
                   <div className="bg-zinc-900 rounded-2xl p-6 sm:p-8 lg:p-12">
                     <div className="flex items-center justify-between mb-8 lg:mb-12">
-                      <span className="text-white text-xs sm:text-sm uppercase tracking-wider">Menu</span>
+                      <span className="text-white text-xs sm:text-sm uppercase tracking-wider">
+                        Menu
+                      </span>
                       <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-white" />
                     </div>
 
                     <nav>
                       <ul className="space-y-4 sm:space-y-5 lg:space-y-6">
                         {menuLinks.map((link) => (
-                          <li key={link.href}>
+                          <li key={link.label}>
                             <Link
                               href={link.href}
                               onClick={() => setIsMenuOpen(false)}
@@ -164,31 +183,51 @@ export function Navbar() {
             <div className="container mx-auto px-4">
               <div className="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-between gap-4 md:gap-6 py-4 md:py-6">
                 <div className="flex flex-wrap gap-4 md:gap-6 text-white text-xs md:text-sm uppercase tracking-wider">
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     Site Policies
                   </Link>
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     Help Desk
                   </Link>
                 </div>
 
                 <div className="flex flex-wrap gap-4 md:gap-6 text-white text-xs md:text-sm uppercase tracking-wider">
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     LinkedIn
                   </Link>
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     Facebook
                   </Link>
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     Instagram
                   </Link>
-                  <Link href="#" className="hover:text-zinc-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-zinc-400 transition-colors"
+                  >
                     Telegram
                   </Link>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-white text-xs md:text-sm">VLOM.UST © 2025</span>
+                  <span className="text-white text-xs md:text-sm">
+                    VLOM.UST © 2025
+                  </span>
                   <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-lime-400" />
                 </div>
               </div>
@@ -197,5 +236,5 @@ export function Navbar() {
         </div>
       </div>
     </>
-  )
+  );
 }

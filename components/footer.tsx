@@ -85,7 +85,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="YOUR EMAIL"
-                className="w-full bg-lime-400 text-black placeholder-black/60 px-6 py-4 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-lime-300"
+                className="w-full bg-slate-100 text-black placeholder-black/60 px-6 py-4 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-lime-300"
                 required
               />
               <button
@@ -99,12 +99,12 @@ export function Footer() {
         </div>
 
         {/* Large Brand Text */}
-        <div className="my-12 md:my-16 overflow-hidden">
+        <div className="my-12 md:my-16">
           <h2
             className="text-[8rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black italic leading-none text-white whitespace-nowrap"
             style={{
               transform: "skewY(-2deg)",
-              letterSpacing: "-0.05em",
+              letterSpacing: "-0.03em",
             }}
           >
             VLOM.UST
@@ -137,10 +137,10 @@ export function Footer() {
 
           {/* Social */}
           <div className="flex gap-6 uppercase tracking-wider">
-            <Link href="#" className="text-lime-400 hover:text-lime-300 transition-colors">
+            <Link href="#" className="text-slate-100 hover:text-lime-300 transition-colors">
               FACEBOOK
             </Link>
-            <Link href="#" className="text-lime-400 hover:text-lime-300 transition-colors">
+            <Link href="#" className="text-slate-100 hover:text-lime-300 transition-colors">
               INSTAGRAM
             </Link>
           </div>
