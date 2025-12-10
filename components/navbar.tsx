@@ -20,6 +20,13 @@ export function Navbar() {
     { href: "#", label: "CONTACT US" },
   ];
 
+  const handleShopClick = () => {
+    const productSection = document.getElementById("product-section");
+    if (productSection) {
+      productSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800">
@@ -55,6 +62,7 @@ export function Navbar() {
 
               <Button
                 variant="ghost"
+                onClick={() => handleShopClick()}
                 className="hidden sm:flex bg-white text-black hover:bg-zinc-200 font-medium px-4 md:px-6 h-9 md:h-10 rounded-full group text-sm"
               >
                 SHOP NOW
@@ -106,9 +114,6 @@ export function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-zinc-400 transition-colors flex items-center gap-2 md:gap-3"
               >
-                <span className="text-xs md:text-sm uppercase tracking-wider">
-                  Close
-                </span>
                 <X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
             </div>
