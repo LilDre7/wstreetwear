@@ -1,21 +1,29 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
 
 export function Footer() {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Newsletter signup:", email)
-    setEmail("")
-  }
+    e.preventDefault();
+    console.log("Newsletter signup:", email);
+    setEmail("");
+  };
+
+  const menuLinks = [
+    { href: "/", label: "HOME" },
+    { href: "/about", label: "ABOUT" },
+    { href: "/testimonials", label: "TESTIMONIALS" },
+    { href: "/contact", label: "CONTACT" },
+    { href: "/store", label: "STORE" },
+  ];
 
   return (
-    <footer className="relative w-full bg-black text-white overflow-hidden">
+    <footer className="relative w-full bg-black text-white overflow-hidden z-50">
       {/* Grid Pattern Overlay */}
       <div
         className="absolute inset-0 opacity-10"
@@ -33,41 +41,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Left: Brand */}
           <div className="md:col-span-3">
-            <h2 className="text-2xl md:text-3xl font-bold italic tracking-tight">VLOM.UST</h2>
+            <h2 className="text-2xl md:text-3xl font-bold italic tracking-tight">
+              VLOM.UST
+            </h2>
           </div>
 
           {/* Center: Navigation */}
           <div className="md:col-span-4 space-y-3">
-            <Link
-              href="/"
-              className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
-            >
-              [ HOME ]
-            </Link>
-            <Link
-              href="/about"
-              className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
-            >
-              ABOUT
-            </Link>
-            <Link
-              href="/testimonials"
-              className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
-            >
-              TESTIMONIALS
-            </Link>
-            <Link
-              href="/contact"
-              className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
-            >
-              CONTACT
-            </Link>
-            <Link
-              href="/store"
-              className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
-            >
-              STORE
-            </Link>
+            {menuLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="block text-white hover:text-lime-400 transition-colors text-sm uppercase tracking-wider"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Right: Newsletter Signup */}
@@ -116,31 +105,51 @@ export function Footer() {
           {/* Copyright */}
           <div className="space-y-1">
             <p className="text-white uppercase tracking-wider">© VLOM.UST /</p>
-            <p className="text-white uppercase tracking-wider">ALL RIGHTS RESERVED</p>
+            <p className="text-white uppercase tracking-wider">
+              ALL RIGHTS RESERVED
+            </p>
           </div>
 
           {/* Legal Links */}
           <div className="flex flex-wrap gap-4 uppercase tracking-wider">
-            <Link href="/shipping" className="text-white hover:text-lime-400 transition-colors">
+            <Link
+              href="/shipping"
+              className="text-white hover:text-lime-400 transition-colors"
+            >
               SHIPPING
             </Link>
-            <Link href="/handling" className="text-white hover:text-lime-400 transition-colors">
+            <Link
+              href="/handling"
+              className="text-white hover:text-lime-400 transition-colors"
+            >
               HANDLING
             </Link>
-            <Link href="/disclaimer" className="text-white hover:text-lime-400 transition-colors">
+            <Link
+              href="/disclaimer"
+              className="text-white hover:text-lime-400 transition-colors"
+            >
               DISCLAIMER
             </Link>
-            <Link href="/offer" className="text-white hover:text-lime-400 transition-colors">
+            <Link
+              href="/offer"
+              className="text-white hover:text-lime-400 transition-colors"
+            >
               PUBLIC OFFER
             </Link>
           </div>
 
           {/* Social */}
           <div className="flex gap-6 uppercase tracking-wider">
-            <Link href="#" className="text-slate-100 hover:text-lime-300 transition-colors">
+            <Link
+              href="#"
+              className="text-slate-100 hover:text-lime-300 transition-colors"
+            >
               FACEBOOK
             </Link>
-            <Link href="#" className="text-slate-100 hover:text-lime-300 transition-colors">
+            <Link
+              href="#"
+              className="text-slate-100 hover:text-lime-300 transition-colors"
+            >
               INSTAGRAM
             </Link>
           </div>
@@ -148,10 +157,12 @@ export function Footer() {
           {/* Design Credit */}
           <div className="text-right space-y-1">
             <p className="text-white uppercase tracking-wider">DESIGN BY</p>
-            <p className="text-white uppercase tracking-wider font-semibold underline">VLOM.UST STUDIO</p>
+            <p className="text-white uppercase tracking-wider font-semibold underline">
+              VLOM.UST STUDIO
+            </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

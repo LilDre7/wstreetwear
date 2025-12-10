@@ -74,8 +74,8 @@ export function Navbar() {
                 className="text-white hover:text-zinc-400 transition-colors flex items-center gap-2"
                 aria-label="Toggle menu"
               >
-                <span className="hidden md:inline text-sm uppercase tracking-wider">
-                  Menu
+                <span className="hidden md:inline text-sm uppercase tracking-wider transition-transform duration-500 ease-in-out">
+                  {isMenuOpen ? "Close" : "Menu"}
                 </span>
                 {isMenuOpen ? (
                   <X className="w-6 h-6" />

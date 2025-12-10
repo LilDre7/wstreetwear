@@ -34,7 +34,7 @@ export default function RootLayout({
             <CartIcon />
           </div>
           {children}
-          <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
+          <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400 text-sm">
             <div className="container mx-auto text-center font-mono">
               <p>
                 &copy; 2025 CREATE FOR
