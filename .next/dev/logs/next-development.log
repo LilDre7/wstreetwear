@@ -1,65 +1,8 @@
-[00:00:01.464] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
-[00:00:01.726] Server  LOG      ✓ Ready in 1135ms
-[00:00:07.060] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.998] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:06.909] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:04:09.943] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:09.943] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:58.565] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:58.565] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:05:02.353] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:05:02.353] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:05:48.227] Server  LOG      ✓ Compiled in 33ms
-[00:06:16.874] Server  LOG      ✓ Compiled in 26ms
-[00:06:18.221] Server  LOG      ✓ Compiled in 30ms
-[00:07:51.871] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:07:51.871] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:08:23.407] Server  LOG      ✓ Compiled in 31ms
-[00:08:33.224] Server  LOG      ✓ Compiled in 25ms
-[00:10:36.398] Server  LOG      ✓ Compiled in 27ms
-[00:10:54.129] Server  LOG      ✓ Compiled in 26ms
-[00:11:04.248] Server  LOG      ✓ Compiled in 30ms
-[00:11:33.411] Server  LOG      ✓ Compiled in 24ms
-[00:11:48.893] Server  LOG      ✓ Compiled in 34ms
-[00:12:00.230] Server  LOG      ✓ Compiled in 20ms
-[00:12:07.135] Server  LOG      ✓ Compiled in 28ms
-[00:12:13.144] Server  LOG      ✓ Compiled in 18ms
-[00:12:39.238] Browser LOG     Newsletter signup: alvaroaburto71@gmail.com
-[00:13:02.477] Server  LOG      ✓ Compiled in 23ms
-[00:14:04.397] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:14:04.397] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:14:35.115] Server  LOG      ✓ Compiled in 22ms
-[00:14:43.855] Server  LOG      ✓ Compiled in 20ms
-[00:14:44.110] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `div`.  It was passed a child from Footer.
-[00:15:01.783] Server  LOG      ✓ Compiled in 21ms
-[00:15:02.107] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `Footer`. 
-[00:15:19.433] Server  LOG      ✓ Compiled in 22ms
-[00:15:22.386] Server  LOG      ✓ Compiled in 27ms
-[00:15:31.677] Server  LOG      ✓ Compiled in 24ms
-[00:15:32.108] Browser ERROR   ./components/navbar.tsx:54:17
-Parsing ecmascript source code failed
-  52 |                 className="relative text-white hover:text-zinc-400 transition-colors"
-  53 |                 aria-label="Shopping cart"
-> 54 |                 <ShoppingCart className="w-6 h-6 text-gray-100" />
-     |                 ^
-  55 |                 {totalItems > 0 && (
-  56 |                   <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
-  57 |                     {totalItems > 9 ? "9+" : totalItems}
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./components/navbar.tsx [Client Component Browser]
-    ./app/page.tsx [Client Component Browser]
-    ./app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/navbar.tsx [Client Component SSR]
-    ./app/page.tsx [Client Component SSR]
-    ./app/page.tsx [Server Component]
+[00:00:02.087] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
+[00:00:02.393] Server  LOG      ✓ Ready in 1340ms
+[00:00:05.418] Server  LOG      ○ Compiling / ...
+[00:02:10.545] Server  LOG      ✓ Compiled in 66ms
+[00:02:21.387] Server  LOG      ✓ Compiled in 32ms
+[00:03:24.978] Server  LOG      ✓ Compiled in 52ms
+[00:11:22.198] Server  LOG      ✓ Compiled in 82ms
+[00:14:12.393] Server  LOG      ✓ Compiled in 33ms

@@ -46,10 +46,6 @@ export function AutoSliderBanner() {
         </div>
       ))}
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
-        {/* <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-100 text-center mb-4">
-          Premium Streetwear
-        </h1>
-        <p className="text-xl text-gray-300 text-center mb-8">Elevate Your Style</p> */}
         <Button
           onClick={handleShopClick}
           className="bg-neutral-950 text-neutral-400 border border-neutral-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"

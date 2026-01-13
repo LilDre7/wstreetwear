@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
 import { SplashScreen } from "@/components/splash-screen";
-import { Logo } from "@/components/logo";
 import { CustomCursor } from "@/components/custom-cursor";
 import { CartProvider } from "@/contexts/cart-context";
 import { CartDrawer } from "@/components/cart-drawer";
@@ -14,7 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SDFM 2520 - Premium Hoodies",
   description: "Premium streetwear and comfortable hoodies",
-  generator: "v0.app",
+  icons: {
+    icon: "logo.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +29,6 @@ export default function RootLayout({
         <CartProvider>
           <SplashScreen />
           <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
-            {/* <Logo /> */}
           </div>
           <div className="fixed top-4 right-4 z-50 pointer-events-auto">
             <CartIcon />
