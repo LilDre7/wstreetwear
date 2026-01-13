@@ -442,6 +442,22 @@ img, video {
   top: 15%;
 }
 
+.-top-10 {
+  top: -2.5rem;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-8 {
+  top: -2rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2329,6 +2345,10 @@ body {
 }
 
 @media (min-width: 1280px) {
+  .xl\:-top-8 {
+    top: -2rem;
+  }
+
   .xl\:text-\[20rem\] {
     font-size: 20rem;
   }

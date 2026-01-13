@@ -23,7 +23,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-black text-white overflow-hidden z-50">
+    <footer className="relative w-full bg-black text-white overflow-hidden z-50 xl:-top-8 ">
       {/* Grid Pattern Overlay */}
       <div
         className="absolute inset-0 opacity-10"

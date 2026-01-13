@@ -11,7 +11,7 @@ import { CartIcon } from "@/components/cart-icon";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SDFM 2520 - Premium Hoodies",
+  title: "SDFM 2520",
   description: "Premium streetwear and comfortable hoodies",
   icons: {
     icon: "logo.jpg",
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.className} bg-dark-900 text-gray-100`}>
         <CartProvider>
-          <SplashScreen />
+          {/* <SplashScreen /> */}
           <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
           </div>
           <div className="fixed top-4 right-4 z-50 pointer-events-auto">

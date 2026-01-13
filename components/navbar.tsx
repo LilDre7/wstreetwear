@@ -29,7 +29,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800">
+      <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center w-full justify-between h-16 md:h-20">
             {/* Logo */}
